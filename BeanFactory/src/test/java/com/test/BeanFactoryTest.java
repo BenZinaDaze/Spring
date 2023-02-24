@@ -1,6 +1,7 @@
 package com.test;
 
-import com.test.servise.UserServise;
+import com.test.dao.UserDao;
+import com.test.service.UserService;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
@@ -14,7 +15,10 @@ public class BeanFactoryTest {
         //读取器配置文件给工厂
         reader.loadBeanDefinitions("beans.xml");
         //根据id获取bean对象
-        UserServise userServise = (UserServise) beanFactory.getBean("userServise");
-        System.out.println(userServise);
+        UserService userService = (UserService) beanFactory.getBean("userService");
+//        System.out.println(userService);
+
+//        UserDao userDao = (UserDao) beanFactory.getBean("userDao");
+//        System.out.println(userDao);
     }
 }
